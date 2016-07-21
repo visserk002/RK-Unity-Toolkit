@@ -41,25 +41,6 @@ public class RKBehaviour : MonoBehaviour {
 		transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, z);
 	}
 
-	protected void WhyIsntThisWorking(string prefix = "debug", bool includeTimestamp = false, params object[] valuesToDebug){
-
-		string text = "";
-
-		foreach(object obj in valuesToDebug){
-
-			string time = "";
-
-			if (includeTimestamp) {
-				time = String.Format("{0:hh:mm:ss}", System.DateTime.Now);
-			}
-
-			text += (time + "-" + prefix + " " + obj.GetType() + ": " + obj.ToString()) + "\n";
-		}
-
-		Debug.Log (text);
-
-	}
-
 	protected void WhyIsntThisWorking(bool includeTimestamp = false, params object[] valuesToDebug){
 
 		string text = "";
