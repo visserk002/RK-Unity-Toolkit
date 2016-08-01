@@ -41,23 +41,17 @@ public class RKBehaviour : MonoBehaviour {
 		transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, z);
 	}
 
-	protected void WhyIsntThisWorking(bool includeTimestamp = false, params object[] valuesToDebug){
+	// Because Unity removed this function and i keep trying to use isactive, now there is a function.
+	public bool isActive(){
+		return gameObject.activeSelf;
+	}
 
-		string text = "";
-
-		foreach(object obj in valuesToDebug){
-
-			string time = "";
-
-			if (includeTimestamp) {
-				time = String.Format("{0:hh:mm:ss}", System.DateTime.Now);
-			}
-
-			text += (time + "-" + obj.GetType() + ": " + obj.ToString()) + "\n";
+	// Check wheter or not the game object this belongs to is null or not
+	public bool isNotNull(){
+		if(gameObject == null){
+			return false;
 		}
-
-		Debug.Log (text);
-
+		return true;
 	}
 
 }
